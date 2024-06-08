@@ -1,0 +1,49 @@
+/* Section Styles */
+section {
+  padding: 20px 0; /* Adjust padding as needed */
+}
+
+.box {
+  max-width: 1200px; /* Adjust max-width as needed */
+  margin: 0 auto;
+}
+
+/* Team Member Styles */
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.team-member {
+  width: 250px; /* Adjust width as needed */
+  margin: 10px;
+  text-align: center; /* Center text */
+}
+
+.team-member img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.team-member:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3,
+.overlay p {
+  margin: 5px 0;
+}

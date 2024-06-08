@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contact Us{% endblock title %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-6">
+            <br><br>
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need assistance, feel free to contact us using the form below.</p>
+            <form action="#" method="POST" class="contact-form">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message:</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div class="contact-info">
+                <br><br>
+
+                <h3>Contact Information</h3>
+                <p><strong>Address:</strong> 123 Main Street, Cityville</p>
+                <p><strong>Email:</strong> info@example.com</p>
+                <p><strong>Phone:</strong> +1 234 567 8901</p>
+                <p><strong>Hours:</strong> Mon-Fri, 9:00 AM - 5:00 PM</p>
+                <div class="social-links mt-3">
+                    <a href="#" class="btn btn-outline-primary me-2"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="btn btn-outline-primary me-2"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="btn btn-outline-primary"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .contact-form {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .contact-info {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .social-links .btn {
+        font-size: 24px;
+        color: #007bff;
+    }
+</style>
+{% endblock content %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Category{% endblock title %}
+
+{% block content %}
+<br/><br/><br/><br/>
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for artt in art %}
+        <div class="col">
+            <a href="{% url 'product-details' artt.id %}" class="btn">
+            <div class="card h-100">
+                <img src="{{ artt.art_image.url }}" class="card-img-top" alt="{{ artt.title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ artt.title }}</h5>
+                    <p class="card-text fw-bold text-success">
+                        Rs.{{ artt.discount_price }}/-
+                        <small class="fw-light text-decoration-line-through"><del>{{ artt.selling_price }}</del></small>
+                    </p>
+                    <div class="d-grid gap-2">
+                        <a href="#" class="btn btn-dark btn-lg text-white">
+                            <i class="fa-brands fa-buy-n-large"></i> Buy Now
+                        </a>
+                        <a href="/addtocart" class="btn btn-danger btn-lg text-white" role="button">
+    <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+</a>
+
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,356 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block offer %}
+ <div>
+    <h2>Upload Image</h2>
+    <img src="{% static 'images/offer.jpg'%}" alt="Image Preview" style="width: 100%; height: 20px; margin-top: 28px;" id="image-preview">
+  </div>
+{% endblock offer %}
+
+{% block banner %}
+<div class="carousel-container">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'images/banner/img_1.jpg' %}" height="500px" class="d-block w-100" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/banner/img_2.jpg' %}" height="500px" class="d-block w-100" alt="Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/banner/img_3.jpg' %}" height="500px" class="d-block w-100" alt="Image 3">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock banner %}
+{% block intro %}
+<div id="artGallery" style="background-color: #f8f9fa; padding: 20px; border-radius: 10px; max-width: 80%; margin: 20px auto; opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; position: relative;">
+    <div style="position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px; background-image: url('https://www.transparenttextures.com/patterns/canvas-light.png'); background-size: cover; border-radius: 20px; z-index: -1;"></div>
+    <h1 style="text-align: center; color: #343a40; font-size: 2.5rem; margin-top: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">Online Art Gallery</h1>
+    <p style="font-size: 1rem; text-align: center; color: #343a40; line-height: 1.6; letter-spacing: 0.5px;">
+        "Welcome to our virtual art gallery, where creativity knows no
+        bounds and imagination takes flight. Step into a world
+        where colors dance, emotions speak, and every stroke tells a story.
+        Explore a curated collection of captivating
+        artworks that celebrate the diversity of human
+        expression. From mesmerizing paintings to
+        thought-provoking sculptures, each piece invites
+        you to embark on a journey of discovery and
+        inspiration. Join us as we transcend boundaries
+        and embrace the endless possibilities of artistic expression.
+        Welcome to a realm where art comes alive."
+    </p>
+</div>
+
+<script>
+    // Function to check if an element is in the viewport
+    function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    // Function to add animation class when element is in viewport
+    function handleScrollAnimation() {
+        var artGallery = document.getElementById('artGallery');
+        if (isElementInViewport(artGallery)) {
+            artGallery.style.opacity = 1;
+            artGallery.style.transform = "translateY(0)";
+            window.removeEventListener('scroll', handleScrollAnimation);
+        }
+    }
+
+    // Event listener to trigger animation on scroll
+    window.addEventListener('scroll', handleScrollAnimation);
+</script>
+{% endblock intro %}
+
+{% block promo %}
+<div id="latestNews" style="background-color: #f8f9fa; padding: 20px; border-radius: 10px; max-width: 80%; margin: 20px auto; position: relative;">
+    <div style="position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px; background-image: url('https://www.transparenttextures.com/patterns/canvas-light.png'); background-size: cover; border-radius: 20px; z-index: -1;"></div>
+    <h1 style="text-align: center; color: #343a40; font-size: 2.5rem; margin-top: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">Latest News</h1>
+    <div class="video-container" style="display: flex; justify-content: center; margin-top: 20px;">
+        <video autoplay loop muted style="width: 50%;">
+            <source src="{% static 'video/promo1.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video autoplay loop muted style="width: 50%;">
+            <source src="{% static 'video/promo2.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+
+{% endblock promo %}
+
+{%block slider_1 %}
+
+<div style="background-color: #f8f9fa; padding: 20px; border-radius: 10px; max-width: 80%; margin: 20px auto; position: relative;">
+    <h1 style="text-align: center; color: #343a40; font-size: 2.5rem;">Artists</h1>
+</div>
+
+<section>
+    <div class="rt-container">
+          <div class="col-rt-12">
+              <div class="Scriptcontent">
+
+<!-- partial:index.partial.html -->
+<div class="slider_container">
+  <div class="wgh-slider">
+    <input class="wgh-slider-target" type="radio" id="slide-1" name="slider"/>
+    <input class="wgh-slider-target" type="radio" id="slide-2" name="slider"/>
+    <input class="wgh-slider-target" type="radio" id="slide-3" name="slider"/>
+    <input class="wgh-slider-target" type="radio" id="slide-4" name="slider" checked="checked"/>
+    <input class="wgh-slider-target" type="radio" id="slide-5" name="slider"/>
+    <input class="wgh-slider-target" type="radio" id="slide-6" name="slider"/>
+    <input class="wgh-slider-target" type="radio" id="slide-7" name="slider"/>
+    <div class="wgh-slider__viewport">
+      <div class="wgh-slider__viewbox">
+        <div class="wgh-slider__container">
+          <div class="wgh-slider-item">
+            <div class="wgh-slider-item__inner">
+              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image" src="{% static 'images/artists/Amit-Bhar-Artist.jpg' %}" alt="The 5th Exotic"/>
+                <figcaption class="wgh-slider-item-figure__caption"><a href="{% static 'images/artists/Amit-Bhar-Artist.jpg' %}">Amit Bhar</a><span>Artist</span></figcaption>
+              </figure>
+              <label class="wgh-slider-item__trigger" for="slide-1" title="Show product 1"></label>
+            </div>
+          </div>
+          <div class="wgh-slider-item">
+            <div class="wgh-slider-item__inner">
+              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image" src="{% static 'images/artists/Jamini-Roy-web.jpg' %}" alt="The 5th Exotic"/>
+                <figcaption class="wgh-slider-item-figure__caption"><a href="{% static 'images/artists/Jamini-Roy-web.jpg' %}">Jamini Roy</a><span>Artist</span></figcaption>
+              </figure>
+              <label class="wgh-slider-item__trigger" for="slide-2" title="Show product 1"></label>
+            </div>
+          </div>
+          <div class="wgh-slider-item">
+            <div class="wgh-slider-item__inner">
+              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image" src="{% static 'images/artists/Laxma-212x300.jpg' %}" alt="The 5th Exotic"/>
+                <figcaption class="wgh-slider-item-figure__caption"><a href="{% static 'images/artists/Laxma-212x300.jpg' %}">laxma</a><span>Artist</span></figcaption>
+              </figure>
+              <label class="wgh-slider-item__trigger" for="slide-3" title="Show product 2"></label>
+            </div>
+          </div>
+          <div class="wgh-slider-item">
+            <div class="wgh-slider-item__inner">
+              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image" src="{% static 'images/artists/NISHANT_DANGE-212X300.jpg' %}" alt="The 5th Exotic"/>
+                <figcaption class="wgh-slider-item-figure__caption"><a href="{% static 'images/artists/NISHANT_DANGE-212X300.jpg' %}">Nishant Dange</a><span>Artist</span></figcaption>
+              </figure>
+              <label class="wgh-slider-item__trigger" for="slide-4" title="Show product 3"></label>
+            </div>
+          </div>
+          <div class="wgh-slider-item">
+            <div class="wgh-slider-item__inner">
+              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image" src="{% static 'images/artists/Om-Swami-212x300.jpg' %}" alt="The 5th Exotic"/>
+                <figcaption class="wgh-slider-item-figure__caption"><a href="{% static 'images/artists/Om-Swami-212x300.jpg' %}">Om Swami</a><span>Artist</span></figcaption>
+              </figure>
+              <label class="wgh-slider-item__trigger" for="slide-5" title="Show product 4"></label>
+            </div>
+          </div>
+          <div class="wgh-slider-item">
+            <div class="wgh-slider-item__inner">
+              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image" src="{% static 'images/artists/SH_RAZA-212X300.jpg' %}" alt="The 5th Exotic"/>
+                <figcaption class="wgh-slider-item-figure__caption"><a href="{% static 'images/artists/SH_RAZA-212X300.jpg' %}">Sh Raza</a><span>Artist</span></figcaption>
+              </figure>
+              <label class="wgh-slider-item__trigger" for="slide-6" title="Show product 4"></label>
+            </div>
+          </div>
+          <div class="wgh-slider-item">
+            <div class="wgh-slider-item__inner">
+              <figure class="wgh-slider-item-figure"><img class="wgh-slider-item-figure__image" src="{% static 'images/artists/SUDIP_ROY-212x300.jpg' %}" alt="RYSY - Traveler LP"/>
+                <figcaption class="wgh-slider-item-figure__caption"><a href="{% static 'images/artists/SUDIP_ROY-212x300.jpg' %}">Sudip Roy</a><span>Artist</span></figcaption>
+              </figure>
+              <label class="wgh-slider-item__trigger" for="slide-7" title="Show product 5"></label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+
+    		</div>
+		</div>
+    </div>
+</section>
+
+
+{% endblock slider_1 %}
+
+
+{% block content %}
+<div>
+    <div class="explore-menu-section pt-5 pb-5" id="exploreMenuSection">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="menu-section-heading">Explore Arts</h1>
+            </div>
+
+            <!-- Sample Book Categories -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="shadow menu-item-card p-3 mb-3">
+                    <img
+                        src="{% static 'images/art/moon.jpg'%}"
+                        class="menu-item-image w-100"
+                        alt="Non-Fiction"
+                    />
+                    <h1 class="menu-card-title">Devik </h1>
+                    <a href="#" class="menu-item-link">
+                        View All Photography
+                        <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                            />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="shadow menu-item-card p-3 mb-3">
+                    <img
+                        src="{% static 'images/art/nature.jpg'%}"
+                        class="menu-item-image w-100"
+                        alt="Painting"
+                    />
+                    <h1 class="menu-card-title">Sanjeev Art</h1>
+                    <a href="{% url 'category' 'pa' %}" class="menu-item-link">
+                        View All Painting
+                        <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                            />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="shadow menu-item-card p-3 mb-3">
+                    <img
+                        src="{% static 'images/art/alien.jpg'%}"
+                        class="menu-item-image w-100"
+                        alt="Non-Fiction"
+                    />
+                    <h1 class="menu-card-title">Sheik Arts</h1>
+                    <a href="#" class="menu-item-link">
+                        View All Art
+                     0   <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                            />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="shadow menu-item-card p-3 mb-3">
+                    <img
+                        src="{% static 'images/art/aqua.jpg'%}"
+                        class="menu-item-image w-100"
+                        alt="Non-Fiction"
+                    />
+                    <h1 class="menu-card-title">Photography</h1>
+                    <a href="#" class="menu-item-link">
+                        View All photography
+                        <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                            />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="shadow menu-item-card p-3 mb-3">
+                    <img
+                        src="{% static 'images/art/kitty.jpg'%}"
+                        class="menu-item-image w-100"
+                        alt="Non-Fiction"
+                    />
+                    <h1 class="menu-card-title">Sharma</h1>
+                    <a href="#" class="menu-item-link">
+                        View All Photography
+                        <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                            />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="shadow menu-item-card p-3 mb-3">
+                    <img
+                        src="{% static 'images/art/marvel.jpg'%}"
+                        class="menu-item-image w-100"
+                        alt="Non-Fiction"
+                    />
+                    <h1 class="menu-card-title">Hand crafts</h1>
+                    <a href="#" class="menu-item-link">
+                        View All Hand Crafts
+                        <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                            />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="shadow menu-item-card p-3 mb-3">
+                    <img
+                        src="{% static 'images/art/kitty.jpg'%}"
+                        class="menu-item-image w-100"
+                        alt="Non-Fiction"
+                    />
+                    <h1 class="menu-card-title">Sculptures</h1>
+                    <a href="#" class="menu-item-link">
+                        View All Sculptures
+                        <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                            />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="shadow menu-item-card p-3 mb-3">
+                    <img
+                        src="{% static 'images/art/alien.jpg'%}"
+                        class="menu-item-image w-100"
+                        alt="Non-Fiction"
+                    />
+                    <h1 class="menu-card-title">Sculptures</h1>
+                    <a href="#" class="menu-item-link">
+                        View All Sculptures
+                        <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                            />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br/><br/>
+{% endblock content %}

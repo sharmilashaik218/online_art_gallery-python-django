@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+     <link rel="stylesheet" href="{% static 'css/promo.css'%}">
+    <link rel="stylesheet" href="{% static 'css/slider_1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aboutus.css'%}">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofGJFCuLZz9gmc2a4WiT1E2D9aIbbV2MKx" crossorigin="anonymous">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="https://kit.fontawesome.com/efc5dcadba.js" crossorigin="anonymous"></script>
+    <style>
+    /* Your navbar styles here */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: top 0.3s; /* Add smooth transition for navbar */
+      z-index: 1000;
+    }
+
+    .hidden {
+      top: -100px; /* Move navbar offscreen when hidden */
+    }
+
+    /* Additional styles for other elements */
+    body {
+      height: 2000px; /* Just for demonstration */
+    }
+  </style>
+
+    <title>Art Gallery | {% block title %}{% endblock title%}</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+        <img src="{% static 'logo.png' %}" width="60" height="50"/>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          {% if request.user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Arts
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'category' 'ph' %}">Photography</a></li>
+            <li><a class="dropdown-item" href="{% url 'category' 'pa' %}">Painting</a></li>
+            <li><a class="dropdown-item" href="{% url 'category' 'sa' %}">Sculptures</a></li>
+              <li><a class="dropdown-item" href="{% url 'category' 'ar' %}">Art</a></li>
+          </ul>
+        </li>
+       <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'aboutus' %}">About us</a>
+        </li>
+       <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'contactus' %}">Contact us</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown mx-2">
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{request.user}}</a>
+            <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+<!--                <li><a class="dropdown-item" href="#">Orders</a></li>-->
+                <li><a class="dropdown-item" href="{% url 'passwordchange' %}">Change Password</a></li>
+                <li><a class="dropdown-item" href="{%  url 'logout' %}">Logout</a></li>
+            </ul>
+            </li>
+          <li class="nav-item mx-2">
+              <a href="{% url 'showcart' %}" class="nav-link text-white">Cart</a>
+          </li>
+          {% else %}
+          <li class="nav-item mx-2">
+              <a href="{% url 'login' %}" class="nav-link text-white">Login</a>
+          </li>
+          <li class="nav-item mx-2">
+              <a href="{% url 'registration' %}" class="nav-link text-white">Registration</a>
+          </li>
+          {% endif %}
+        </ul>
+  </div>
+</nav>
+<script>
+    let prevScrollpos = window.pageYOffset;
+
+    window.onscroll = function() {
+      let currentScrollPos = window.pageYOffset;
+
+      if (prevScrollpos > currentScrollPos) {
+        document.querySelector(".navbar").style.top = "0";
+      } else {
+        document.querySelector(".navbar").style.top = "-100px";
+      }
+
+      prevScrollpos = currentScrollPos;
+    }
+  </script>
+
+{% block offer %}
+{% endblock offer %}
+
+{% block banner %}
+{% endblock banner %}
+
+{% block intro %}
+{% endblock intro %}
+
+{% block promo %}
+{% endblock promo %}
+
+{%block slider_1 %}
+{% endblock slider_1 %}
+
+{% block content %}
+{% endblock content %}
+
+{% block payment-gateway %}
+{% endblock payment-gateway %}
+<footer class="container-fluid bg-dark text-white text-center p-2 mt-5"> <!fixed-bottom>
+        <div class="container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>We are your trusted Art Gallery platform.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="aboutus">About Us</a></li>
+                    <li><a href="contactus">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <p>Email: info@ArtGallery.com</p>
+                <p>Phone: +1 123-456-7890</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="{% static 'js/myscript.js' %}"></script>
+
+
+</body>
+</html>

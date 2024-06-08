@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Address{% endblock title %}
+
+{% block content %}
+<br/><br/><br/>
+<div class="container-lg mt-5">
+    <!-- Move Profile and Address buttons to top left and display as a list -->
+    <div class="d-flex justify-content-start mb-3">
+        <ul class="list-unstyled">
+            <li class="d-grid"><a href="{% url 'profile' %}" class="btn">Profile</a></li>
+            <li class="d-grid"><a href="{% url 'address' %}" class="btn btn-primary">Address</a></li>
+        </ul>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title text-center mb-4">Welcome <span class="text-capitalize">{{ request.user }}</span></h3>
+                    <div class="row">
+                        <div class="col-sm-2 border-end">
+                            <ul class="list-unstyled">
+                                <!-- Removed Profile and Address buttons from here -->
+                            </ul>
+                        </div>
+                        <div class="col-sm-8 offset-sm-1">
+                            <div class="row">
+                                {% for ad in add %}
+                                <div class="col-sm-6">
+                                    <div class="card m-2">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Address {{ forloop.counter }}</h5>
+                                            <p class="card-text">Name: {{ ad.name }}</p>
+                                            <p class="card-text">Locality: {{ ad.locality }}</p>
+                                            <p class="card-text">Mobile: {{ ad.mobile }}</p>
+                                            <p class="card-text">City: {{ ad.city }}</p>
+                                            <p class="card-text">State: {{ ad.state }}</p>
+                                            <p class="card-text">PinCode: {{ ad.pincode }}</p>
+                                            <p class="text-center"><a href="{% url 'updateaddress' pk=ad.id %}" type="button" class="btn btn-success">Update</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--&lt;!&ndash; Display Profile Outside Container &ndash;&gt;-->
+<!--<div class="container">-->
+<!--    <h2>Profile Information</h2>-->
+<!--    &lt;!&ndash; Add your profile information display code here &ndash;&gt;-->
+<!--</div>-->
+
+<!--&lt;!&ndash; Display Address Outside Container &ndash;&gt;-->
+<!--<div class="container">-->
+<!--    <h2>Address Information</h2>-->
+<!--    &lt;!&ndash; Add your address information display code here &ndash;&gt;-->
+<!--</div>-->
+{% endblock content %}

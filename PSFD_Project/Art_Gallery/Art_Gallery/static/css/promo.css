@@ -1,0 +1,22 @@
+.video-container {
+        width: 100%;
+        white-space: nowrap; /* Prevent wrapping */
+        overflow-x: auto; /* Allow horizontal scrolling if necessary */
+        text-align: center; /* Align content center */
+    }
+
+    .video-container video {
+        max-width: 50%; /* Each video takes up half of the container width */
+        max-height: 300px; /* Adjust as needed */
+        height: auto;
+        display: inline-block;
+        vertical-align: top; /* Align videos to the top */
+    }
+
+    .video-container video::-webkit-media-controls {
+        display: none !important; /* Hide default video controls for WebKit browsers */
+    }
+
+    .video-container video::-webkit-media-controls-enclosure {
+        display: none !important; /* Hide default video controls for WebKit browsers */
+    }

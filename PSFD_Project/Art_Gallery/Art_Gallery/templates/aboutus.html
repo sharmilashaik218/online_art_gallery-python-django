@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About us{% endblock title %}
+
+{% block content %}
+<main>
+    <section class="company-info">
+        <div class="box">
+            <h2>----------</h2>
+        </div>
+    </section>
+    <section class="company-info">
+        <div class="box">
+            <h2>Our Company</h2>
+            <p>We are an online art gallery dedicated to promoting and showcasing talented artists from around the world. Our platform provides a space for artists to exhibit their work and for art enthusiasts to discover and appreciate diverse forms of artistic expression.</p>
+            <p>Founded in 20XX, our gallery has quickly become a leading destination for art lovers, collectors, and artists alike. We strive to foster creativity, innovation, and community through our online platform.</p>
+        </div>
+    </section>
+
+    <section class="our-values">
+        <div class="box">
+            <h2>Our Values</h2>
+            <ul>
+                <li><strong>Creativity:</strong> We celebrate creativity in all its forms and support artists in expressing their unique visions.</li>
+                <li><strong>Diversity:</strong> We embrace diversity and strive to showcase a wide range of artistic styles, perspectives, and cultures.</li>
+                <li><strong>Quality:</strong> We are committed to providing high-quality artwork and ensuring a positive experience for both artists and collectors.</li>
+                <li><strong>Community:</strong> We believe in the power of community and aim to build a supportive and inclusive environment for artists and art enthusiasts.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="our-vision">
+        <div class="box">
+            <h2>Our Vision</h2>
+            <p>Our vision is to be the premier destination for discovering and experiencing art online. We aspire to connect artists with a global audience and to inspire creativity, appreciation, and passion for art in people's lives.</p>
+        </div>
+    </section>
+
+    <section class="team">
+        <div class="box">
+            <h2>Meet Our Team</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="{% static 'images/team/navadeep.jpg'%}" alt="Team Member 1">
+                    <div class="overlay">
+                        <h3>Sai Navadeep</h3>
+                        <p>BackEnd Dev</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="{% static 'images/team/sharmila.jpg'%}" alt="Team Member 2">
+                    <div class="overlay">
+                        <h3>Sharmila</h3>
+                        <p>Team Lead / UI-UX designer</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="{% static 'images/team/sanjeev.jpg' %}" alt="Team Member 3">
+                    <div class="overlay">
+                        <h3>Sappa Sanjeev</h3>
+                        <p>Front End dev</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock content %}

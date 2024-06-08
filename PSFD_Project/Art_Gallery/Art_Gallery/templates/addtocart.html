@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Shopping Cart{% endblock title %}
+
+{% block content %}
+<br/><br/><br/>
+<div class="container my-5">
+    <div class="row">
+        {% if cart %}
+        <div class="col-md-8">
+            <h1 class="mb-5">Shopping Cart</h1>
+            <div class="card">
+                <div class="card-body">
+                    <h3>Cart</h3>
+                    {% for item in cart %}
+                    <div class="row mb-3">
+                        <div class="col-sm-3 text-center">
+                            <img src="{{ item.art.art_image.url }}" alt="{{ item.art.title }}" class="img-fluid img-thumbnail" height="150" width="150">
+                        </div>
+                        <div class="col-sm-9">
+                            <div>
+                                <h5>{{ item.art.title }}</h5>
+                                <p class="text-muted">{{ item.art.discription }}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="quantity-control">
+                                        <label for="quantity">Quantity:</label>
+                                        <a class="minus-cart btn" pid="{{ item.art.id }}"><i class="fa-solid fa-minus-circle"></i></a>
+                                        <span id="quantity">{{ item.quantity }}</span>
+                                        <a class="plus-cart btn" pid="{{ item.art.id }}"><i class="fa-solid fa-plus-circle"></i></a>
+                                        <a class="remove-cart btn btn-sm btn-danger" href="#" pid={{item.art.id}}>Remove item</a>
+                                    </div>
+                                    <div>
+                                        <p class="mb-0"><strong>Rs. {{ item.art.discount_price }}</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="text-muted">
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Total Amount</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Amount
+                            <span class="badge bg-primary rounded-pill" id="amount">Rs. {{ amount }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Shopping
+                            <span class="badge bg-primary rounded-pill">Rs. 40.00</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Total (including GST)</strong>
+                            <span class="badge bg-success rounded-pill" id="totalamount">Rs. {{ totalamount }}</span>
+                        </li>
+                    </ul>
+                    <div class="d-grid mt-3">
+                        <a href="{% url 'checkout' %}" class="btn btn-primary">Place Order</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="col-md-12 text-center">
+            <h1 class="mb-5">Cart is Empty</h1>
+        </div>
+        {% endif %}
+    </div>
+</div>
+<br/><br/><br/>
+{% endblock content %}

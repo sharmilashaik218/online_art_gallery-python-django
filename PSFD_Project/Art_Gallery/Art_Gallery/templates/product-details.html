@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Product-Details{% endblock title %}
+
+{% block content %}
+<br/><br/><br/><br/>
+<div class="container">
+    <div class="row flex justify-content-between">
+        <div class="col-lg-6">
+            <img src="{{ art.art_image.url }}" class="img-fluid" alt="Art Image" style="max-height: 200px;">
+        </div>
+        <div class="productdetail col-lg-6">
+            <h1 style="font-family: Lucida Console; font-size: 25px;">{{ art.title }}</h1>
+            <h5>Rs.{{ art.discount_price }}/-</h5>
+            <small class="text-decoration-line-through text-muted fs-5"><del>Rs.{{ art.selling_price }}</del></small>
+            <br/><br/>
+            <h4>Art</h4>
+            <ul class="fs-5" style="font-family: Rajdhani;">
+                <li>{{ art.discription }}</li>
+            </ul>
+            <div class="d-flex justify-content-between">
+                <form action="{% url 'addtocart' %}" method="GET" class="d-inline">
+                    <input type="hidden" name="art_id" value="{{ art.id }}">
+                    <button class="btn btn-primary shadow px-5 py-2" type="submit"><i class="fa-solid fa-cart-shopping"></i>
+                        Add to Cart
+                    </button>
+                </form>
+                <a href="{% url 'showcart' %}" class="btn btn-warning shadow px-5 py-2 ms-4 text-decoration-none text-white"><i class="fa-brands fa-buy-n-large"></i> Buy Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+<br/><br/><br/>
+{% endblock content %}
