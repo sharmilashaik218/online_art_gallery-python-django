@@ -33,7 +33,26 @@ The digital era has opened up new avenues for artists and art enthusiasts to con
 
 ### Screenshots :
 
-![Screenshot of the Art Gallery](https://github.com/sharmilashaik218/online_art_gallery-python-django/blob/45924709cdea11956065f484837373aa05aad89e/Screenshot%202024-06-09%20115241.png)
+![Screenshot 1](https://github.com/sharmilashaik218/online_art_gallery-python-django/blob/45924709cdea11956065f484837373aa05aad89e/Screenshot%202024-06-09%20115241.png)
+
+![Screenshot 2](https://github.com/sharmilashaik218/online_art_gallery-python-django/blob/fa5741549d487e1f6d61569b34601801f5aa822f/Screenshot%202024-06-09%20115412.png)
+
+![Screenshot 3](https://github.com/sharmilashaik218/online_art_gallery-python-django/blob/fa5741549d487e1f6d61569b34601801f5aa822f/Screenshot%202024-06-09%20123941.png)
+
+![Screenshot 4](https://github.com/sharmilashaik218/online_art_gallery-python-django/blob/fa5741549d487e1f6d61569b34601801f5aa822f/Screenshot%202024-06-09%20124006.png)
+
+![Screenshot 5](https://github.com/sharmilashaik218/online_art_gallery-python-django/blob/fa5741549d487e1f6d61569b34601801f5aa822f/Screenshot%202024-06-09%20124026.png)
+
+![Screenshot 6](https://github.com/sharmilashaik218/online_art_gallery-python-django/blob/fa5741549d487e1f6d61569b34601801f5aa822f/Screenshot%202024-06-09%20124045.png)
+
+![Screenshot 7](https://github.com/sharmilashaik218/online_art_gallery-python-django/blob/fa5741549d487e1f6d61569b34601801f5aa822f/Screenshot%202024-06-09%20124113.png)
+
+![Screenshot 8](https://github.com/sharmilashaik218/online_art_gallery-python-django/blob/fa5741549d487e1f6d61569b34601801f5aa822f/Screenshot%202024-06-09%20124216.png)
+
+![Screenshot 9](https://github.com/sharmilashaik218/online_art_gallery-python-django/blob/fa5741549d487e1f6d61569b34601801f5aa822f/Screenshot%202024-06-09%20124305.png)
+
+![Screenshot 10](https://github.com/sharmilashaik218/online_art_gallery-python-django/blob/fa5741549d487e1f6d61569b34601801f5aa822f/Screenshot%202024-06-09%20124326.png)
+
 
 
 
