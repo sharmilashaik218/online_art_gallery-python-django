@@ -1,5 +1,40 @@
-<<<<<<< HEAD
-"#  online_art_gallery_python_django" 
-=======
-# online_art_gallery-python-django
->>>>>>> 413fffc9e92db78a475f935692083105defa563f
+Online Art Gallery  
+
+This is the our final project created as a End sem project for our course Python FullStack Development
+
+
+Project Link :https://klu2200030032.pythonanywhere.com/
+
+Demo Video :https://drive.google.com/file/d/1O096Ga6BFdEmleUg9OFojU4mK_FQBcRn/view
+
+Front-End: HTML, CSS, JS, Bootstrap
+Back-End: dbsqlite 3
+Connectivity : Django
+
+IDE : pycharm
+
+
+
+### Industry :
+Fin-Tech (e-commerce - website)
+
+### Project Title :
+Online Art Gallery
+
+### Introduction :
+
+Art has always been a cornerstone of human expression and creativity, transcending boundaries and cultures. In the digital age, the concept of an online art gallery has emerged as a transformative platform, reshaping how people interact with and appreciate art. This article delves into the immersive world of online art galleries, exploring the customer journey, the role of empathy in enhancing the experience, and ultimately, the profound impact this innovation has on the art industry.
+The digital era has opened up new avenues for artists and art enthusiasts to connect and appreciate creativity from around the world. Building an online art gallery provides a platform for artists to showcase their work and for art lovers to explore and purchase pieces that resonate with them. In this article, we'll embark on a journey to develop an engaging online art gallery using Python full-stack technologies.
+
+
+### Project Description :
+ The Online Art Gallery is a web-based platform that showcases and promotes various artworks, allowing artists to exhibit their creations and art enthusiasts to explore and purchase artworks online. The platform serves as a virtual art gallery, providing a curated collection of paintings, sculptures, photographs, digital art, and other forms of visual art. It aims to connect artists with art lovers, promote art appreciation, and facilitate art sales and transactions.
+
+
+### Screenshots :
+
+![Screenshot (35)] https://drive.google.com/file/d/1w2u0RGCQSCXKV6gSjWSPRfKpBdRfM1Tx/view?usp=sharing
+
+
+
+
