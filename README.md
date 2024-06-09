@@ -33,7 +33,8 @@ The digital era has opened up new avenues for artists and art enthusiasts to con
 
 ### Screenshots :
 
-![Screenshot (35)] https://drive.google.com/file/d/1w2u0RGCQSCXKV6gSjWSPRfKpBdRfM1Tx/view?usp=sharing
+![Screenshot of the Art Gallery](https://github.com/sharmilashaik218/online_art_gallery-python-django/blob/45924709cdea11956065f484837373aa05aad89e/Screenshot%202024-06-09%20115241.png)
+
 
 
 
